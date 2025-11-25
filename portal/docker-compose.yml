@@ -1,0 +1,85 @@
+networks:
+  lume:
+    external: true
+
+services:
+  # ----------------------------
+  # MySQL Developer
+  # ----------------------------
+  mysql-developer:
+    image: mysql:8
+    container_name: mysql-developer
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: lume_panel_developer
+    ports:
+      - "3307:3306"
+    networks:
+      - lume
+
+  # Spring Boot Developer
+  lume-developer:
+    build: .
+    container_name: lume-developer
+    env_file:
+      - .env.developer
+    ports:
+      - "8081:8080"
+    depends_on:
+      - mysql-developer
+    networks:
+      - lume
+
+  # ----------------------------
+  # MySQL Staging
+  # ----------------------------
+  mysql-staging:
+    image: mysql:8
+    container_name: mysql-staging
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: lume_panel_staging
+    ports:
+      - "3308:3306"
+    networks:
+      - lume
+
+  # Spring Boot Staging
+  lume-staging:
+    build: .
+    container_name: lume-staging
+    env_file:
+      - .env.staging
+    ports:
+      - "8082:8080"
+    depends_on:
+      - mysql-staging
+    networks:
+      - lume
+
+  # ----------------------------
+  # MySQL Production
+  # ----------------------------
+  mysql-production:
+    image: mysql:8
+    container_name: mysql-production
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: lume_panel_production
+    ports:
+      - "3309:3306"
+    networks:
+      - lume
+
+  # Spring Boot Production
+  lume-production:
+    build: .
+    container_name: lume-production
+    env_file:
+      - .env.production
+    ports:
+      - "8083:8080"
+    depends_on:
+      - mysql-production
+    networks:
+      - lume
