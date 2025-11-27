@@ -1,5 +1,7 @@
-CREATE DATABASE IF NOT EXISTS lume_panel_developer
-  CHARACTER SET utf8mb4
-  COLLATE utf8mb4_unicode_ci;
-
-USE lume_panel_developer;
+CREATE DATABASE lume_panel_developer
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'en_US.utf8'
+    LC_CTYPE = 'en_US.utf8'
+    TEMPLATE = template0;

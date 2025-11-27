@@ -3,17 +3,21 @@ networks:
     external: true
 
 services:
+
   # ----------------------------
-  # MySQL Developer
+  # PostgreSQL Developer
   # ----------------------------
-  mysql-developer:
-    image: mysql:8
-    container_name: mysql-developer
+  postgres-developer:
+    image: postgres:16
+    container_name: postgres-developer
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: lume_panel_developer
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: lume_panel_developer
     ports:
-      - "3307:3306"
+      - "5433:5432"
+    volumes:
+      - postgres_dev_data:/var/lib/postgresql/data
     networks:
       - lume
 
@@ -26,21 +30,24 @@ services:
     ports:
       - "8081:8080"
     depends_on:
-      - mysql-developer
+      - postgres-developer
     networks:
       - lume
 
   # ----------------------------
-  # MySQL Staging
+  # PostgreSQL Staging
   # ----------------------------
-  mysql-staging:
-    image: mysql:8
-    container_name: mysql-staging
+  postgres-staging:
+    image: postgres:16
+    container_name: postgres-staging
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: lume_panel_staging
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: lume_panel_staging
     ports:
-      - "3308:3306"
+      - "5434:5432"
+    volumes:
+      - postgres_staging_data:/var/lib/postgresql/data
     networks:
       - lume
 
@@ -53,21 +60,24 @@ services:
     ports:
       - "8082:8080"
     depends_on:
-      - mysql-staging
+      - postgres-staging
     networks:
       - lume
 
   # ----------------------------
-  # MySQL Production
+  # PostgreSQL Production
   # ----------------------------
-  mysql-production:
-    image: mysql:8
-    container_name: mysql-production
+  postgres-production:
+    image: postgres:16
+    container_name: postgres-production
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: lume_panel_production
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: lume_panel_production
     ports:
-      - "3309:3306"
+      - "5435:5432"
+    volumes:
+      - postgres_prod_data:/var/lib/postgresql/data
     networks:
       - lume
 
@@ -80,6 +90,11 @@ services:
     ports:
       - "8083:8080"
     depends_on:
-      - mysql-production
+      - postgres-production
     networks:
       - lume
+
+volumes:
+  postgres_dev_data:
+  postgres_staging_data:
+  postgres_prod_data:
