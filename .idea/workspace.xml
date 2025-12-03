@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="22e0ac2f-2123-4e6f-90b0-f2897c549a8e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/portal/src/main/resources/db/migration/V3__create_permission_table.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portal/src/main/resources/db/migration/V4__create_user_permissions_table.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/portal/.env.production" beforeDir="false" afterPath="$PROJECT_DIR$/portal/.env.production" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portal/.env.staging" beforeDir="false" afterPath="$PROJECT_DIR$/portal/.env.staging" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portal/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/portal/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portal/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/portal/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/portal/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portal/src/main/java/com/lume/panel/portal/configs/cors/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/portal/src/main/java/com/lume/panel/portal/configs/cors/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portal/src/main/java/com/lume/panel/portal/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/portal/src/main/java/com/lume/panel/portal/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portal/src/main/java/com/lume/panel/portal/models/Permission.java" beforeDir="false" afterPath="$PROJECT_DIR$/portal/src/main/java/com/lume/panel/portal/models/Permission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portal/src/main/java/com/lume/panel/portal/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/portal/src/main/java/com/lume/panel/portal/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portal/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/portal/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portal/src/main/resources/db/migration/developer/V1__create_database.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/portal/src/main/resources/db/migration/developer/V2__create_users_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/portal/src/main/resources/db/migration/V2__create_users_table.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portal/src/main/resources/db/migration/developer/V3_create_permissions_table.sql" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="35wlJRKFlZI35LhEPjxnnBhjjTr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.lume-developer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.lume-production.executor&quot;: &quot;Run&quot;,
+    &quot;Application.lume-staging.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.portal.mysql-developer: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Project\panel\portal\src\main\resources\db\migration" />
+      <recent name="C:\Project\panel\portal" />
+      <recent name="C:\Project\panel\portal\src\main\resources\db\migration\developer" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="portal.mysql-developer: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="mysql-developer" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="portal/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.portal.mysql-developer: Compose Deployment" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="22e0ac2f-2123-4e6f-90b0-f2897c549a8e" name="Changes" comment="" />
+      <created>1764028943030</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1764028943030</updated>
+    </task>
+    <servers />
+  </component>
+</project>
