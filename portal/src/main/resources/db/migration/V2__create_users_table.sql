@@ -1,5 +1,3 @@
--- Migration para criar a tabela 'Users' no banco de dados
-
 CREATE TABLE IF NOT EXISTS "users" (
     "id" UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     "first_name" VARCHAR(255) NOT NULL,

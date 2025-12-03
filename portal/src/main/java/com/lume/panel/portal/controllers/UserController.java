@@ -13,7 +13,7 @@ import java.time.ZoneOffset;
 public class UserController {
 
     @GetMapping("/helloworld")
-    public ResponseEntity HelloWorld(){
-        return ResponseEntity.ok("Hello World" + LocalDateTime.now().toInstant(ZoneOffset.of("-03:00")));
+    public ResponseEntity<String> helloWorld() {
+        return ResponseEntity.ok("Hello World " + LocalDateTime.now().toInstant(ZoneOffset.of("-03:00")));
     }
 }

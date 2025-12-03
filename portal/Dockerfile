@@ -22,16 +22,23 @@ RUN mvn -B clean package -DskipTests
 # ===============================
 FROM eclipse-temurin:21-jre
 
+# Criar usuário não-root para segurança
+RUN groupadd -r spring && useradd -r -g spring spring
+
 WORKDIR /app
 
 # Copia o JAR da fase de build
 COPY --from=build /app/target/*.jar app.jar
 
-# Copia os arquivos .env para o container
-COPY .env.* ./
+# Mudar ownership para usuário não-root
+RUN chown -R spring:spring /app
+
+# Mudar para usuário não-root
+USER spring:spring
 
 # Expondo a porta padrão do Spring Boot
 EXPOSE 8080
 
 # Comando final para rodar a aplicação
-ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]
+# Preserva todas as variáveis de ambiente do docker-compose
+ENTRYPOINT ["sh", "-c", "exec java ${JAVA_OPTS} -jar app.jar"]

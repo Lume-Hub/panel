@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.jspecify.annotations.Nullable;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,7 +19,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Entity
 @Table(name = "users")
-public class User implements UserDetails {
+public class UserModel implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id", nullable = false)
@@ -49,16 +48,22 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        boolean isAdmin = this.permissions.stream().anyMatch(permission -> permission.getName().equals("ROLE_ADMIN"));
-
-        if(isAdmin)
-            return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
-        else
+        if (this.permissions == null || this.permissions.isEmpty()) {
             return List.of(new SimpleGrantedAuthority("ROLE_USER"));
+        }
+        
+        boolean isAdmin = this.permissions.stream()
+                .anyMatch(permission -> permission.getName().equals("ROLE_ADMIN"));
+
+        if (isAdmin) {
+            return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
+        } else {
+            return List.of(new SimpleGrantedAuthority("ROLE_USER"));
+        }
     }
 
     @Override
-    public @Nullable String getPassword() {
+    public String getPassword() {
         return this.password;
     }
 
